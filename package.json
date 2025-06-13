@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
+    "@sanity/client": "^7.6.0",
     "@sanity/image-url": "^1.1.0",
+    "@sanity/sdk": "^2.0.0",
     "@sanity/vision": "^3.91.0",
     "@tailwindcss/typography": "^0.0.0-insiders.0339c42",
     "class-variance-authority": "^0.7.1",
@@ -27,11 +29,12 @@
     "lucide-react": "^0.513.0",
     "next": "15.3.3",
     "next-auth": "^5.0.0-beta.28",
-    "next-sanity": "^9.8.58-canary.0",
+    "next-sanity": "^9.12.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sanity": "^3.91.0",
     "sanity-plugin-markdown": "^5.1.1",
+    "server-only": "^0.0.1",
     "styled-components": "^6.1.18",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7"
