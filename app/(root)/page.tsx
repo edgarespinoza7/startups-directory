@@ -1,19 +1,9 @@
+import SearchForm from "../../components/SearchForm";
+import StartupCard, { StartupTypeCard } from "../../components/StartupCard";
 import { client } from "@/sanity/lib/client";
 import { STARTUP_QUERY } from "@/lib/queries";
-import SearchForm from "../../components/SearchForm";
-import StartupCard from "../../components/StartupCard";
 
-interface StartupCardType {
-  _id: string;
-  title: string;
-  description: string;
-  category: string;
-  image: {
-    asset: {
-      url: string;
-    }; 
-  };
-}
+
 
 export default async function Home({
   searchParams,
@@ -25,7 +15,7 @@ export default async function Home({
   const posts = await client.fetch(STARTUP_QUERY);
 
   return (
-    <>
+    <>     
       {/* Hero Section */}
       <section className="w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6">
         <h1 className="heading">
@@ -43,10 +33,15 @@ export default async function Home({
           {query ? `Search Results for "${query}"` : "All Startups"}
         </p>
         <ul className="mt-7 card_grid">
-          {posts?.length > 0 &&
-            posts.map((post: StartupCardType) => (
+          {posts?.length > 0 ? (
+            posts.map((post: StartupTypeCard) => (
               <StartupCard key={post?._id} post={post} />
-            ))}
+            ))
+          ) : (
+            <p className="text-20-semibold text-center col-span-full">
+              No Startups Found
+            </p>
+          )}
         </ul>
       </section>
     </>
