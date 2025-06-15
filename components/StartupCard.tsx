@@ -39,7 +39,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           <Link href={`/users/${author?._id}`}>
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link>
-          <Link href={`/startups/${_id}`}>
+          <Link href={`/startup/${_id}`}>
             <h3 className="text-26-semibold line-clamp-1">{title}</h3>
           </Link>
         </div>
@@ -53,7 +53,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           />
         </Link>
       </div>
-      <Link href={`/startups/${_id}`}>
+      <Link href={`/startup/${_id}`}>
         <p className="startup_card_desc mb-2">{description}</p>
         <img src={image} alt="placeholder" className="startup-card_img" />
       </Link>
@@ -62,7 +62,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           <p className="text-16-medium">{category}</p>
         </Link>
         <Button className="startup-card_btn" asChild>
-          <Link href={`/startups/${_id}`}>Details</Link>
+          <Link href={`/startup/${_id}`}>Details</Link>
         </Button>
       </div>
     </li>
